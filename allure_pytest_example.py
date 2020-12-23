@@ -14,4 +14,13 @@ driver = webdriver.Firefox()
 
 class TestCalcMoneyCurrency:
     @allure.step('Run browser, run app')
+    
     def setup_method(self, method):
+        driver.maximize_window()
+        driver.get('http://www.../converter')
+        assert 'Calc to currency' in driver.title
+        driver.implicitly_wait(15)
+
+    @allure.step('Back and closing a browser')
+    
+    def teardown_method(self, method):        
