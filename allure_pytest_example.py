@@ -3,8 +3,8 @@ import pytest
 import allure
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
 
 
 driver = webdriver.Firefox()
@@ -30,4 +30,23 @@ class TestCalcMoneyCurrency:
     def test_input_amount(self):
             amount = ['1', '10']  # a list valid data
             input_amount_field = driver.find_element_by_xpath("...")  # input field
-            input_amount_field.click() # click on result button     
+            input_amount_field.click() # click on result button   
+            
+            for option in amount: 
+                input_amount_field.clear()  # clear a field
+                input_amount_field.send_keys(option)  
+                button_convert = driver.find_element_by_xpath("...").click()
+
+                with allure.step('Correct result if use valid data'):
+                    assert driver.find_element_by_xpath("..."), 'Error for result' 
+
+                    time.sleep(1)
+                    num1 = driver.find_element_by_xpath("...").text  # Result 1
+                    val1 = driver.find_element_by_xpath("...").text  # Result 2 
+                    
+                    if ',' not in option:
+                        option = option + ',00'
+
+                    with allure.step(''):
+                        assert option == num1, 'Result is not a correct'
+            
