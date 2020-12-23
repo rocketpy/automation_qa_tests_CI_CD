@@ -7,4 +7,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 
 
+driver = webdriver.Firefox()
 
+@allure.feature('Functional testing')
+@allure.story('Actions')
+
+class TestCalcMoneyCurrency:
+    @allure.step('Run browser, run app')
+    def setup_method(self, method):
