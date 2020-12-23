@@ -23,4 +23,11 @@ class TestCalcMoneyCurrency:
 
     @allure.step('Back and closing a browser')
     
-    def teardown_method(self, method):        
+    def teardown_method(self, method):   
+        driver.quit()
+
+    @allure.step('Input valid data and checking a result')
+    def test_input_amount(self):
+            amount = ['1', '10']  # a list valid data
+            input_amount_field = driver.find_element_by_xpath("...")  # input field
+            input_amount_field.click() # click on result button     
