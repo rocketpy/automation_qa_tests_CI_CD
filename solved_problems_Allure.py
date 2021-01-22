@@ -15,3 +15,21 @@ allure generate directory-with-results/ -o directory-where-u-want-indexhtmlrepor
 
 """
 
+#  Creating allure report with allure-cli and pytest
+"""
+# base command
+allure serve path/to/allure-results
+
+Локально вот так лучше сделать
+
+py.test --alluredir reports
+allure serve reports
+Можно сделать вот так
+
+py.test --alluredir reports
+allure generate reports
+
+
+
+Откройте отчет в Firefox
+"""
