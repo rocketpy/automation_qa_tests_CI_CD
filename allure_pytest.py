@@ -1,6 +1,8 @@
 #  Allure Framework is a flexible lightweight multi-language test report tool
 
 #  Allure pytest integration
+
+#  Git:   https://github.com/allure-framework/allure-python
 #  Docs:  https://docs.qameta.io/allure/  or  https://docs.qameta.io/allure/#_pytest
 #  PyPi:  https://pypi.org/project/allure-pytest/
 
