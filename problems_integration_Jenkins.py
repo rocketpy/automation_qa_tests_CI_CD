@@ -16,3 +16,15 @@ pip install -U pytest
 
 #  run script here
 ....
+
+"""
+#  created virtualenv like this:
+
+PYENV_HOME=$WORKSPACE/.pyenv/
+virtualenv --no-site-packages $PYENV_HOME
+source $PYENV_HOME/bin/activate
+pip install -U pytest
+pip install -r requirements.txt
+py.test test_file_name.py 
+deactivate
+"""
