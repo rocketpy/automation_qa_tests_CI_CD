@@ -24,6 +24,8 @@ def test_valid_login(test_setup):
     assert "page_name" in driver.current_url
     
     
+@allure.description("Ivalid data") 
+@allure.severity(severity_level="Normal")
 def test_invalid_login(test_setup):    
     driver.get("https://www...")
     driver.find_element_by_id("id_name").clear()
