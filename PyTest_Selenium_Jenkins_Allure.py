@@ -36,6 +36,18 @@ def test_invalid_login(test_setup):
     assert "page_name" in driver.current_url    
     
     
+@allure.step("Username {0}")  
+def input_user_name(username):    
+    # driver.find_element_by_id("id_name").clear()
+    driver.find_element_by_id("id_name").send_keys(username)      
+    
+  
+@allure.step("Password {0}")
+def input_password(password):    
+    # driver.find_element_by_id("id_name").clear()
+    driver.find_element_by_id("id_name").send_keys(password) 
+    
+    
 def test_teardown():    
     driver.quit()
 
