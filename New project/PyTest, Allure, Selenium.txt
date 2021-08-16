@@ -1,0 +1,19 @@
+1. Install PyTest
+pip install pytest
+
+
+2. Install Allure
+pip install allure-pytest
+Docs Allure: https://docs.qameta.io/allure/
+Github: https://github.com/allure-framework/allure2
+
+# Check the installation
+Execute in cmd: allure --version
+
+
+3. Install Selenium
+pip install selenium
+
+
+4. Configure Jenkins
+Manage Jenkins -> Manage Plugins -> Python and Allure
