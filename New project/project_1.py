@@ -16,3 +16,9 @@ def test_setup():
 @allure.severity(severity_level=CRITICAL)
 def test_valid_login(test_setup):
     driver.get("https://")
+    driver.find_element_by_id("").clear()
+    driver.find_element_by_id("").send_keys("login_name")
+    driver.find_element_by_id("").clear()
+    driver.find_element_by_id("").send_keys("password")
+    driver.find_element_by_id("").click()
+    assert ...
