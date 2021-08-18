@@ -24,7 +24,7 @@ def test_valid_login(test_setup):
     assert "something" in driver.current_url
 
     
-@allure.description("Validating with invalid a login form")
+@allure.description("Validating with invalid data a login form")
 @allure.severity(severity_level=NORMAL)
 def test_invalid_login(test_setup):
     driver.get("https://")
@@ -39,4 +39,10 @@ def test_invalid_login(test_setup):
 @allure.step("Entering a user name as {}")
 def enter_user_name(user_name):
     driver.find_element_by_id("...").send_keys("user_name")
+    
+    
+@allure.step("Entering a password as {}")
+def enter_password(password):
+    driver.find_element_by_id("...").send_keys("password")
+    
     
