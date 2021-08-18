@@ -21,4 +21,18 @@ def test_valid_login(test_setup):
     driver.find_element_by_id("").clear()
     driver.find_element_by_id("").send_keys("password")
     driver.find_element_by_id("").click()
-    assert ...
+    assert "something" in driver.current_url
+
+    
+@allure.description("Validating with invalid a login form")
+@allure.severity(severity_level=NORMAL)
+def test_invalid_login(test_setup):
+    driver.get("https://")
+    driver.find_element_by_id("").clear()
+    enter_user_name("User_name")
+    driver.find_element_by_id("").clear()
+    enter_password("Password")
+    driver.find_element_by_id("").click()  # button
+    assert "something" in driver.current_url
+    
+    
