@@ -36,3 +36,7 @@ def test_invalid_login(test_setup):
     assert "something" in driver.current_url
     
     
+@allure.step("Entering a user name as {}")
+def enter_user_name(user_name):
+    driver.find_element_by_id("...").send_keys("user_name")
+    
